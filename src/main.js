@@ -2,6 +2,7 @@ import 'aframe'
 import 'mind-ar/dist/mindar-image-aframe.prod.js'
 import './style.css'
 
+const BASE_PATH = import.meta.env.BASE_URL
 const BOARD_WIDTH = 1.2
 const BOARD_HEIGHT = 1.01
 const BOARD_GRID_INSET = {
@@ -64,7 +65,7 @@ document.querySelector('#app').innerHTML = `
   </section>
 
   <a-scene
-    mindar-image="imageTargetSrc: /targets.mind; filterMinCF: 0.0001; filterBeta: 0.001"
+    mindar-image="imageTargetSrc: ${BASE_PATH}targets.mind; filterMinCF: 0.0001; filterBeta: 0.001"
     color-space="sRGB"
     renderer="colorManagement: true, physicallyCorrectLights"
     vr-mode-ui="enabled: false"
@@ -74,7 +75,7 @@ document.querySelector('#app').innerHTML = `
     <a-assets>
       <img
         id="cuki-board-texture"
-        src="/assets/papan cuki reborn.jpeg"
+        src="${BASE_PATH}assets/papan cuki reborn.jpeg"
         alt="Papan CUKI Reborn"
       />
     </a-assets>
